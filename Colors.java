@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 import java.util.*;
 
 public class Colors{
@@ -87,8 +88,10 @@ public class Colors{
 		
 		
 		for(int i = 0; i < arrListOfAnswers.size(); i++){
-			questionsAboutCases.add(i, new QuestionAboutCase(new ImageIcon("Cases/" + (i + 1) +".jpg").getImage(), i+1, arrListOfAnswers.get(i)));
-			/*cases.add(0, new Case(new ImageIcon("Cases/1.jpg").getImage(), 1, arrListOfAnswers.get(0)));*/
+                        URL url = Colors.class.getResource("/" + (i + 1) + ".jpg");
+			questionsAboutCases.add(i, new QuestionAboutCase(new ImageIcon(url).getImage(), i+1, arrListOfAnswers.get(i)));
+			//questionsAboutCases.add(i, new QuestionAboutCase(new ImageIcon("Cases/" + (i + 1) +".jpg").getImage(), i+1, arrListOfAnswers.get(i)));
+                        
 		}
 		
 		//перемешиваем варианты ответов
